@@ -1,0 +1,36 @@
+data:
+  home: ../data
+  dict: /java-small/java-small.dict.c2s
+  train: /java-small/train
+  valid: /java-small/val
+  test: /java-small/test
+
+
+training:
+  batch_size: 256
+  num_epochs: 50
+  lr: 0.001
+  teacher_forcing_rate: 0.4
+  nesterov: True
+  weight_decay: 0.01
+  momentum: 0.95
+  decay_ratio: 0.95
+  save_name: /model.pth
+  warm_up: 1
+  patience: 2
+  
+  
+model:
+  token_size: 128
+  hidden_size: 64
+  num_layers: 1
+  bidirectional: True
+  rnn_dropout: 0.5
+  embeddings_dropout: 0.3
+  num_k : 200
+
+etc:
+  info_prefix: code2seq
+  slack_url_path: ../slack/slack_url.yml
+
+comment: code2seq
